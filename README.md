@@ -1,2 +1,1 @@
-# INFO2180 Lab 4
-This is Lab 4 for Abegayle WIlliams
+# AJAX Superheroes Starter Files
