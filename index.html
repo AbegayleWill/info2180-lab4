@@ -8,12 +8,26 @@
     <script src="app.js"></script>
 </head>
 <body>
-    <div>
-        <h1>Avenger's Character Search</h1>
-    </div>
-    <div id = "search">
-        <button class="searchBtn" type= "button">Search</button>
-    </div>
+    <header>
+        <div class= "title">
+            <h1>Avenger's Character Search</h1>
+        </div>
+    </header>
+    <main>
+        <p>Search by Full Name or Alias</p>
+        <div >
+            <form id= "searchElements">
+                <input id = "searchbox" type = "text" name= "searchbox" placeholder = "eg.Captain America or Steve Rogers">
+                <button id = "search" class="searchBtn" type= "submit">Search</button>
+            </form>
+        </div>
+        <div id = "result">
+            <h2>Result</h2>
+            <hr />
+        </div>
+        <div class = "message"></div>
+    </main>
+    
 
 </body>
 </html>

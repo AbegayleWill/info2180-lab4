@@ -1,0 +1,16 @@
+header{
+    background-color:cornflowerblue;
+
+}
+header h1{
+    text-align: center;
+    color: white;
+    text-transform: uppercase;
+}
+main{
+    background-color:lightgrey;
+}
+
+input [type = text]{
+
+}

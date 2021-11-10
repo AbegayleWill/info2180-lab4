@@ -1,28 +1,32 @@
 window.onload = function(){
     var httpRequest;
+    search = document.getElementById("searchbox");
     document.getElementById("search").addEventListener('click', makeRequest);
     console.log("button clicked")
 
+    
+    
+    function Contents() {
+        if (httpRequest.readyState === XMLHttpRequest.DONE) {
+            if (httpRequest.status === 200) {
+                var result = doucment.getElementById("result");
+                var heroes = httpRequest.responseText;
+                if (searchbox.value != ""){
+                result.innerHTML = heroes
+                } else {
+                    alert('There was a problem with the request.');
+                }
+            }
+        }
+    }
     function makeRequest() {
         httpRequest = new XMLHttpRequest();
-
-        if (!httpRequest) {
-        alert('Cannot create an XMLHTTP instance');
-        return false;
-        }
-        httpRequest.onreadystatechange = alertContents;
-        httpRequest.open('GET', "http://localhost/info2180-lab4/superheroes.php");
+        httpRequest.onreadystatechange = Contents;
+        httpRequest.open('GET', "http://localhost/info2180-lab4/superheroes.php?q" + search.value, true);
         httpRequest.send();
+        
     }
 
-    function alertContents() {
-        if (httpRequest.readyState === XMLHttpRequest.DONE) {
-        if (httpRequest.status === 200) {
-            alert(httpRequest.responseText);
-        } else {
-            alert('There was a problem with the request.');
-        }
-        }
-    }
+    
+  
 }
-
